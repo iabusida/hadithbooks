@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A64534211916BB4A0026329D /* HadithHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A64534201916BB4A0026329D /* HadithHelper.m */; };
 		A64534231916BE6E0026329D /* PageTurnViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64534221916BE6E0026329D /* PageTurnViewController_iPad.xib */; };
+		A64534271919C9FB0026329D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64534251919C9FB0026329D /* RootViewController.m */; };
+		A64534281919C9FB0026329D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64534261919C9FB0026329D /* RootViewController.xib */; };
 		A6676D441914A38700FD16F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6676D431914A38700FD16F9 /* Foundation.framework */; };
 		A6676D461914A38700FD16F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6676D451914A38700FD16F9 /* CoreGraphics.framework */; };
 		A6676D481914A38700FD16F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6676D471914A38700FD16F9 /* UIKit.framework */; };
@@ -88,6 +90,9 @@
 		A645341F1916BB4A0026329D /* HadithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HadithHelper.h; sourceTree = "<group>"; };
 		A64534201916BB4A0026329D /* HadithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HadithHelper.m; sourceTree = "<group>"; };
 		A64534221916BE6E0026329D /* PageTurnViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageTurnViewController_iPad.xib; sourceTree = "<group>"; };
+		A64534241919C9FB0026329D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		A64534251919C9FB0026329D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		A64534261919C9FB0026329D /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		A6676D401914A38700FD16F9 /* HadithBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HadithBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6676D431914A38700FD16F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A6676D451914A38700FD16F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -314,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				A6676DA71914A45A00FD16F9 /* HadithSourcesViewController.m */,
+				A64534251919C9FB0026329D /* RootViewController.m */,
 				A6676DA51914A45A00FD16F9 /* BooksViewController.m */,
 				A6676DA91914A45A00FD16F9 /* PageTurnViewController.m */,
 				A6676DA81914A45A00FD16F9 /* NarrationViewController.m */,
@@ -329,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				A6676DB81914A48000FD16F9 /* HadithSourcesViewController.h */,
+				A64534241919C9FB0026329D /* RootViewController.h */,
 				A6676DB61914A48000FD16F9 /* BooksViewController.h */,
 				A6676DBA1914A48000FD16F9 /* PageTurnViewController.h */,
 				A6676DB91914A48000FD16F9 /* NarrationViewController.h */,
@@ -354,6 +361,7 @@
 		A6676DBD1914A4AE00FD16F9 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				A64534261919C9FB0026329D /* RootViewController.xib */,
 				A6676DBE1914A4C500FD16F9 /* BookmarkCell_iPad.xib */,
 				A6676DBF1914A4C500FD16F9 /* BookmarkCell.xib */,
 				A6676DC01914A4C500FD16F9 /* BookmarksViewController_iPad.xib */,
@@ -488,6 +496,7 @@
 				A64534231916BE6E0026329D /* PageTurnViewController_iPad.xib in Resources */,
 				A6676DD21914A4C500FD16F9 /* BookPageViewController.xib in Resources */,
 				A6676D9E1914A42F00FD16F9 /* bg_small.png in Resources */,
+				A64534281919C9FB0026329D /* RootViewController.xib in Resources */,
 				A6676DDB1914A4C500FD16F9 /* PageTurnViewController.xib in Resources */,
 				A6676DD71914A4C500FD16F9 /* HadithSourcesViewController_iPad.xib in Resources */,
 				A6676D971914A41F00FD16F9 /* Icon.png in Resources */,
@@ -539,6 +548,7 @@
 				A6676DAD1914A45A00FD16F9 /* BooksViewController.m in Sources */,
 				A6676DAB1914A45A00FD16F9 /* BookmarksViewController.m in Sources */,
 				A64534211916BB4A0026329D /* HadithHelper.m in Sources */,
+				A64534271919C9FB0026329D /* RootViewController.m in Sources */,
 				A6676DDF1914A57500FD16F9 /* HadithContext.m in Sources */,
 				A6676DEC1914A5FA00FD16F9 /* Narration.m in Sources */,
 				A6676D521914A38700FD16F9 /* main.m in Sources */,
@@ -668,7 +678,7 @@
 				INFOPLIST_FILE = "HadithBooks/HadithBooks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F6DE229E-295A-43CC-B72F-F9A13369CB18";
+				PROVISIONING_PROFILE = "78111D28-2085-4BB4-B9EF-1266777879B1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -685,7 +695,7 @@
 				INFOPLIST_FILE = "HadithBooks/HadithBooks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F6DE229E-295A-43CC-B72F-F9A13369CB18";
+				PROVISIONING_PROFILE = "78111D28-2085-4BB4-B9EF-1266777879B1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

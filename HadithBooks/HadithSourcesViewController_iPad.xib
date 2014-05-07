@@ -39,19 +39,6 @@
                         <outlet property="delegate" destination="-1" id="sVZ-lU-Xf7"/>
                     </connections>
                 </tableView>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h8Q-zh-Msd">
-                    <rect key="frame" x="639" y="27" width="122" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                    <size key="titleShadowOffset" width="1" height="0.0"/>
-                    <state key="normal" title="Contact Us">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="ContactUs:" destination="-1" eventType="touchUpInside" id="sc5-TR-7K8"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.97254908080000002" green="0.94901967050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
         </view>

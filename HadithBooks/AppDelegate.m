@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HadithSourcesViewController.h"
+#import "RootViewController.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -27,7 +27,7 @@
     }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [[HadithSourcesViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"HadithSourcesViewController"] bundle:nil];
+    self.window.rootViewController = [[RootViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"RootViewController"] bundle:nil];
     [self.window makeKeyAndVisible];
     return YES;
 }

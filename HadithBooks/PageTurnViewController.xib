@@ -43,6 +43,7 @@
             </subviews>
             <color key="backgroundColor" red="0.97254908080000002" green="0.94901967050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
 </document>

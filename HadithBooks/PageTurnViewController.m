@@ -64,7 +64,6 @@ int currentIndex = 0;
     
     [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height)];
     
-    
     NarrationViewController *narrationViewController = [self viewControllerAtIndex:0];
     
     NSArray *viewControllers = [NSArray arrayWithObject:narrationViewController];

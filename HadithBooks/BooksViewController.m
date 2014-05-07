@@ -32,7 +32,7 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
         BookList = [[[HadithContext alloc] init] GetBooksBySourceId:sourceId];
         self.EnglishTitle = englishTitle;
         self.ArabicTitle = arabicTitle;
@@ -72,33 +72,30 @@
     HadithBookCell *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
     
     Book  *book = [BookList objectAtIndex:indexPath.row];
+    cell = (HadithBookCell*)[HadithBookCell cellFromNibNamed:cellID ofClass:[HadithBookCell class]];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.lblEnglish.text = book.EnglishTitle;
+    cell.lblArabic.text = book.ArabicTitle;
     
-    if(cell == nil)
-    {
-        cell = (HadithBookCell*)[HadithBookCell cellFromNibNamed:cellID ofClass:[HadithBookCell class]];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.lblEnglish.text = book.EnglishTitle;
-        cell.lblArabic.text = book.ArabicTitle;
-    }
     return cell;
-
+    
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//
+    //
     PageTurnViewController *narrationView = [[PageTurnViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"PageTurnViewController"] bundle:nil :[BookList objectAtIndex:indexPath.row]];
     narrationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:narrationView animated:YES completion:nil];
-//    //				PageTurnViewController narrationView = new PageTurnViewController (this.hadithBook, indexPath.Row);
-//    narrationView.ModalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
-//    this.parentController.PresentViewController (narrationView, true, null);
-
-
-
-//    BooksViewController *booksView = [[BooksViewController alloc] init]; //new BooksViewController (source.EnglishTitle, source.ArabicTitle, source.SourceId);
-//    [self presentViewController:booksView animated:NO completion:nil];
+    //    //				PageTurnViewController narrationView = new PageTurnViewController (this.hadithBook, indexPath.Row);
+    //    narrationView.ModalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
+    //    this.parentController.PresentViewController (narrationView, true, null);
+    
+    
+    
+    //    BooksViewController *booksView = [[BooksViewController alloc] init]; //new BooksViewController (source.EnglishTitle, source.ArabicTitle, source.SourceId);
+    //    [self presentViewController:booksView animated:NO completion:nil];
 }
 
 

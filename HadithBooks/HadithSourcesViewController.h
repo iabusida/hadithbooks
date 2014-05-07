@@ -16,7 +16,6 @@
 	UITableView *_sourceTable;
 
 }
-
 @property (nonatomic, retain) NSMutableArray *hadithsourcelist; 
 @property (nonatomic, retain) IBOutlet UIImageView *bg_image;
 
