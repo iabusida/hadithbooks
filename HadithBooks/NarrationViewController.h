@@ -41,13 +41,6 @@
 @property (nonatomic, retain) NSString *ArabicTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(Narration *)narration :(NSString *)englishTitle :(NSString *)arabicTitle;
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(int)narrationId;
-- (IBAction)GoBack:(id)sender;
 
-- (IBAction)NextNarration:(id)sender;
-
-- (IBAction)PreviousNarration:(id)sender;
-
-- (IBAction)btnLanguage:(id)sender;
 
 @end

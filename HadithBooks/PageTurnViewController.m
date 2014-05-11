@@ -40,6 +40,15 @@ int currentIndex = 0;
 }
 
 - (IBAction)btnAddToFavorites:(id)sender {
+    BookmarkItem *bookmarkItem = [[BookmarkItem alloc] init];
+
+    bookmarkItem.SourceId = currentBook.SourceId;
+    bookmarkItem.BookId = currentBook.BookId;
+    bookmarkItem.NarrationId = currentIndex;
+    bookmarkItem.ArabicTitle = currentBook.ArabicTitle;
+    bookmarkItem.EnglishTitle = currentBook.EnglishTitle;
+
+    [HadithHelper AddBookmark:bookmarkItem];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(Book *)book
@@ -62,7 +71,7 @@ int currentIndex = 0;
     
     self.pageController.dataSource = self;
     
-    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height)];
+    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height - 210)];
     
     NarrationViewController *narrationViewController = [self viewControllerAtIndex:0];
     
@@ -144,16 +153,16 @@ int currentIndex = 0;
     return [self viewControllerAtIndex:index ];
     
 }
-
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    // The number of items reflected in the page indicator.
-    return [currentBook.Narrations count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    // The selected item reflected in the page indicator.
-    return 0;
-}
+//
+//
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+//    // The number of items reflected in the page indicator.
+//    return [currentBook.Narrations count];
+//}
+//
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+//    // The selected item reflected in the page indicator.
+//    return 0;
+//}
 
 @end

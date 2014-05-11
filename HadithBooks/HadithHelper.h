@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BookmarkItem.h"
 @interface HadithHelper : NSObject
 
 +(NSString *) LoadNibName :(NSString *)xibName;
@@ -16,4 +16,6 @@
 +(void) UpdateLanguage;
 +(BOOL) isArabic;
 +(void) UpdateFontSize :(float)fontsize;
++(void)AddBookmark :(BookmarkItem *)bookmarkItem;
++(NSMutableArray *)fetchBookMarks;
 @end

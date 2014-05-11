@@ -20,6 +20,10 @@
                     <rect key="frame" x="0.0" y="74" width="320" height="331"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="fOE-qH-G3f"/>
+                        <outlet property="delegate" destination="-1" id="Am8-tN-0qE"/>
+                    </connections>
                 </tableView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gAp-k2-SVW">
                     <rect key="frame" x="91" y="27" width="125" height="21"/>

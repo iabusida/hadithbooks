@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6045B11191DE45A008A5717 /* house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6045B10191DE45A008A5717 /* house@2x.png */; };
+		A6045B13191DE469008A5717 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = A6045B12191DE469008A5717 /* house.png */; };
+		A6045B16191F1CE5008A5717 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = A6045B14191F1CE5008A5717 /* bookmark.png */; };
+		A6045B17191F1CE5008A5717 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = A6045B15191F1CE5008A5717 /* book.png */; };
+		A6045B1A191F4416008A5717 /* BookmarkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6045B19191F4416008A5717 /* BookmarkItem.m */; };
 		A64534211916BB4A0026329D /* HadithHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A64534201916BB4A0026329D /* HadithHelper.m */; };
 		A64534231916BE6E0026329D /* PageTurnViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64534221916BE6E0026329D /* PageTurnViewController_iPad.xib */; };
 		A64534271919C9FB0026329D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64534251919C9FB0026329D /* RootViewController.m */; };
@@ -87,6 +92,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6045B10191DE45A008A5717 /* house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house@2x.png"; sourceTree = "<group>"; };
+		A6045B12191DE469008A5717 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		A6045B14191F1CE5008A5717 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
+		A6045B15191F1CE5008A5717 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
+		A6045B18191F4416008A5717 /* BookmarkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkItem.h; sourceTree = "<group>"; };
+		A6045B19191F4416008A5717 /* BookmarkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkItem.m; sourceTree = "<group>"; };
 		A645341F1916BB4A0026329D /* HadithHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HadithHelper.h; sourceTree = "<group>"; };
 		A64534201916BB4A0026329D /* HadithHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HadithHelper.m; sourceTree = "<group>"; };
 		A64534221916BE6E0026329D /* PageTurnViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageTurnViewController_iPad.xib; sourceTree = "<group>"; };
@@ -255,6 +266,8 @@
 				A6676D5A1914A38700FD16F9 /* Images.xcassets */,
 				A6676D571914A38700FD16F9 /* HadithBooks.xcdatamodeld */,
 				A6676D4C1914A38700FD16F9 /* Supporting Files */,
+				A6045B18191F4416008A5717 /* BookmarkItem.h */,
+				A6045B19191F4416008A5717 /* BookmarkItem.m */,
 			);
 			path = HadithBooks;
 			sourceTree = "<group>";
@@ -291,6 +304,10 @@
 		A6676D781914A40500FD16F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6045B14191F1CE5008A5717 /* bookmark.png */,
+				A6045B15191F1CE5008A5717 /* book.png */,
+				A6045B12191DE469008A5717 /* house.png */,
+				A6045B10191DE45A008A5717 /* house@2x.png */,
 				A6676D9B1914A42F00FD16F9 /* bg_small.png */,
 				A6676D9C1914A42F00FD16F9 /* cell_bg.png */,
 				A6676D9D1914A42F00FD16F9 /* sallallahu_alaihi_wa_sallam.png */,
@@ -483,6 +500,7 @@
 				A6676DD61914A4C500FD16F9 /* HadithBookCell.xib in Resources */,
 				A6676DCE1914A4C500FD16F9 /* BookmarkCell.xib in Resources */,
 				A6676DCF1914A4C500FD16F9 /* BookmarksViewController_iPad.xib in Resources */,
+				A6045B16191F1CE5008A5717 /* bookmark.png in Resources */,
 				A6676D501914A38700FD16F9 /* InfoPlist.strings in Resources */,
 				A6676DD81914A4C500FD16F9 /* HadithSourcesViewController.xib in Resources */,
 				A6676D8D1914A41F00FD16F9 /* Default.png in Resources */,
@@ -497,11 +515,13 @@
 				A6676DD21914A4C500FD16F9 /* BookPageViewController.xib in Resources */,
 				A6676D9E1914A42F00FD16F9 /* bg_small.png in Resources */,
 				A64534281919C9FB0026329D /* RootViewController.xib in Resources */,
+				A6045B17191F1CE5008A5717 /* book.png in Resources */,
 				A6676DDB1914A4C500FD16F9 /* PageTurnViewController.xib in Resources */,
 				A6676DD71914A4C500FD16F9 /* HadithSourcesViewController_iPad.xib in Resources */,
 				A6676D971914A41F00FD16F9 /* Icon.png in Resources */,
 				A6676D5B1914A38700FD16F9 /* Images.xcassets in Resources */,
 				A6676DD01914A4C500FD16F9 /* BookmarksViewController.xib in Resources */,
+				A6045B13191DE469008A5717 /* house.png in Resources */,
 				A6676D921914A41F00FD16F9 /* Icon-60@2x.png in Resources */,
 				A6676D931914A41F00FD16F9 /* Icon-72.png in Resources */,
 				A6676DCD1914A4C500FD16F9 /* BookmarkCell_iPad.xib in Resources */,
@@ -516,6 +536,7 @@
 				A6676D8A1914A41F00FD16F9 /* Default-568h@2x.png in Resources */,
 				A6676DD91914A4C500FD16F9 /* NarrationViewController_iPad.xib in Resources */,
 				A6676D961914A41F00FD16F9 /* Icon-76@2x.png in Resources */,
+				A6045B11191DE45A008A5717 /* house@2x.png in Resources */,
 				A6676D941914A41F00FD16F9 /* Icon-72@2x.png in Resources */,
 				A6676D9A1914A41F00FD16F9 /* page_cover_iPhone.png in Resources */,
 			);
@@ -538,6 +559,7 @@
 			files = (
 				A6676DE51914A5D600FD16F9 /* Book.m in Sources */,
 				A6676DB11914A45A00FD16F9 /* PageTurnViewController.m in Sources */,
+				A6045B1A191F4416008A5717 /* BookmarkItem.m in Sources */,
 				A6676DAE1914A45A00FD16F9 /* HadithBookCell.m in Sources */,
 				A6676D591914A38700FD16F9 /* HadithBooks.xcdatamodeld in Sources */,
 				A6676DAF1914A45A00FD16F9 /* HadithSourcesViewController.m in Sources */,

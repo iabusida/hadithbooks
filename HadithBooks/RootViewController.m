@@ -34,15 +34,15 @@
     // FirstViewController
     BookmarksViewController *bmc =[[BookmarksViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"BookmarksViewController"] bundle:nil];
     bmc.title=@"Bookmarks";
-    bmc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:1];
-    bmc.tabBarItem.image=[UIImage imageNamed:@"i.png"];
+    bmc.tabBarItem.image=[UIImage imageNamed:@"bookmark"];
     
     //SecondViewController
     HadithSourcesViewController *hsvc=[[HadithSourcesViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"HadithSourcesViewController"] bundle:nil];
     hsvc.title=@"Hadith Books";
-    hsvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
-    hsvc.tabBarItem.image=[UIImage imageNamed:@"im.png"];
+   // hsvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
+    hsvc.tabBarItem.image=[UIImage imageNamed:@"book.png"];
     //
+
     //    //ThirdViewController
     //    Third *tvc=[[Third alloc]initWithNibName:nil bundle:nil];
     //    tvc.title=@"Third";

@@ -58,4 +58,22 @@
     return [pref floatForKey:@"fontsize"];
 }
 
++ (void)AddBookmark:(BookmarkItem *)bookmarkItem{
+    NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *bookmarks = [self fetchBookMarks];
+    
+    [bookmarks addObject:bookmarkItem];
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:bookmarks];
+    [pref setObject:encodedObject forKey:@"bookmarks"];
+    [pref synchronize];
+    
+}
+
++ (NSMutableArray *)fetchBookMarks{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:@"bookmarks"];
+    NSMutableArray *bookmarks = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return bookmarks == nil ? [[NSMutableArray alloc] init] : bookmarks;
+}
+
 @end

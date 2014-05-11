@@ -42,7 +42,7 @@
                     </connections>
                 </textView>
             </subviews>
-            <color key="backgroundColor" red="0.97254908080000002" green="0.94901967050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" red="0.9210379464285714" green="0.90253589592715733" blue="0.84702974442291512" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

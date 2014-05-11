@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BookmarksViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
-	UITableView *_sourceTable;
-}
+@interface BookmarksViewController : UIViewController<UITableViewDelegate> {
 
+}
+@property(nonatomic, retain)  NSMutableArray *bookmarkItems;
 @property (nonatomic, retain) IBOutlet UITableView *sourceTable;
 
 

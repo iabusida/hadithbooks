@@ -32,6 +32,7 @@
     Narration *narration;
     Book *currentBook;
 }
+@property (strong, nonatomic) IBOutlet UILabel *lblNarrationCount;
 
 @property (nonatomic, retain) IBOutlet UIButton *btnLanguageId;
 @property (nonatomic, retain) IBOutlet UILabel *lblTItle;
