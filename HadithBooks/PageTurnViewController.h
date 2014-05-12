@@ -27,13 +27,11 @@
 @interface PageTurnViewController : UIViewController <UIPageViewControllerDataSource>{
     int BookId;
     int SourceId;
-    int narrationIndex;
-    int currentIndex;
     Narration *narration;
     Book *currentBook;
 }
 @property (strong, nonatomic) IBOutlet UILabel *lblNarrationCount;
-
+@property (nonatomic, assign) NSUInteger currentIndex;
 @property (nonatomic, retain) IBOutlet UIButton *btnLanguageId;
 @property (nonatomic, retain) IBOutlet UILabel *lblTItle;
 @property (nonatomic, retain) UIScrollView *scrollView;
@@ -45,6 +43,6 @@
 
 - (IBAction)btnAddToFavorites:(id)sender;
 
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(Book *)book :(NSUInteger)narrationIndex;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(Book *)book;
 @end

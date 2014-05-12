@@ -69,6 +69,18 @@
     
 }
 
++ (void)DeleteBookMark:(NSUInteger)bookmarkIndex{
+    NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *bookmarks = [self fetchBookMarks];
+    
+    [bookmarks removeObjectAtIndex:bookmarkIndex];
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:bookmarks];
+    [pref setObject:encodedObject forKey:@"bookmarks"];
+    [pref synchronize];
+    
+}
+
+
 + (NSMutableArray *)fetchBookMarks{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [defaults objectForKey:@"bookmarks"];

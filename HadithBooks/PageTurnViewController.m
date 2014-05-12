@@ -9,9 +9,9 @@
 #import "NarrationViewController.h"
 @implementation PageTurnViewController
 
-@synthesize btnLanguageId, lblTItle;
+@synthesize btnLanguageId, lblTItle, currentIndex;
 
-int currentIndex = 0;
+
 
 /*
  Language settings:
@@ -61,6 +61,18 @@ int currentIndex = 0;
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(Book *)book :(NSUInteger)narrationIndex
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        currentBook = book;
+        currentBook.Narrations = [[[HadithContext alloc] init] GetNarrationByBookId:book.SourceId :book.BookId];
+        currentIndex = narrationIndex;
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -71,9 +83,9 @@ int currentIndex = 0;
     
     self.pageController.dataSource = self;
     
-    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height - 210)];
+    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height)];
     
-    NarrationViewController *narrationViewController = [self viewControllerAtIndex:0];
+    NarrationViewController *narrationViewController = [self viewControllerAtIndex:currentIndex];
     
     NSArray *viewControllers = [NSArray arrayWithObject:narrationViewController];
     
@@ -132,7 +144,6 @@ int currentIndex = 0;
     
     NSUInteger index = [(NarrationViewController *)viewController NarrationId];
     
-    NSLog(@"Index: %d" , index);
     index++;
     
     if (index == [currentBook.Narrations count]) {
@@ -145,13 +156,9 @@ int currentIndex = 0;
             currentBook = newbook;
         }
         currentBook.Narrations = [[[HadithContext alloc] init] GetNarrationByBookId:currentBook.SourceId :currentBook.BookId];
-        NSLog(@"Current narration count: %d", [currentBook.Narrations count]);
         index = 0;
     }
-    
-    
     return [self viewControllerAtIndex:index ];
-    
 }
 //
 //

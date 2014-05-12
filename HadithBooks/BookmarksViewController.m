@@ -6,7 +6,9 @@
 
 
 #import "BookmarksViewController.h"
-#import "HadithBookCell.h"
+#import "BookmarkCell.h"
+#import "PageTurnViewController.h"
+
 @implementation BookmarksViewController
 
 @synthesize sourceTable, bookmarkItems;
@@ -18,11 +20,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        bookmarkItems = [HadithHelper fetchBookMarks];
     }
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    bookmarkItems = [HadithHelper fetchBookMarks];
+    [sourceTable reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -32,8 +38,8 @@
     if (window.size.height == 568) {
       
     }
-    sourceTable.delegate = self;
-    [sourceTable reloadData];
+//    bookmarkItems = [HadithHelper fetchBookMarks];
+//    [sourceTable reloadData];
 }
 
 
@@ -51,23 +57,41 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSString *cellID = [HadithHelper LoadNibName:@"HadithBookCell"];
-    HadithBookCell *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
+    NSString *cellID = [HadithHelper LoadNibName:@"BookmarkCell"];
+    BookmarkCell *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
     
     BookmarkItem  *bookmarkItem = [bookmarkItems objectAtIndex:indexPath.row];
-    cell = (HadithBookCell*)[HadithBookCell cellFromNibNamed:cellID ofClass:[HadithBookCell class]];
+    cell = (BookmarkCell*)[BookmarkCell cellFromNibNamed:cellID ofClass:[BookmarkCell class]];
     cell.backgroundColor = [UIColor clearColor];
-    cell.lblEnglish.text = bookmarkItem.EnglishTitle;
-    cell.lblArabic.text = bookmarkItem.ArabicTitle;
-    
+    cell.lblTitle.text = [HadithHelper isArabic] ? bookmarkItem.ArabicTitle : bookmarkItem.EnglishTitle;
+    cell.lblNarrationNumber.text = [NSString stringWithFormat:@"Narration #:%d", bookmarkItem.NarrationId + 1];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
     
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    BooksViewController *booksView = [[BooksViewController alloc] init]; //new BooksViewController (source.EnglishTitle, source.ArabicTitle, source.SourceId);
-    //    [self presentViewController:booksView animated:NO completion:nil];
+    BookmarkItem *bookmark = [bookmarkItems objectAtIndex:indexPath.row];
+
+    Book *book =  [[[HadithContext alloc] init] GetBookById:bookmark.SourceId :bookmark.BookId];
+ 
+    PageTurnViewController *narrationView = [[PageTurnViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"PageTurnViewController"] bundle:nil :book :bookmark.NarrationId];
+    narrationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:narrationView animated:YES completion:nil];
 }
+
+
+
+- (void)tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // If row is deleted, remove it from the list.
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [HadithHelper DeleteBookMark:indexPath.row];
+        bookmarkItems = [HadithHelper fetchBookMarks];
+        [sourceTable reloadData];
+    }
+}
+
+
 @end

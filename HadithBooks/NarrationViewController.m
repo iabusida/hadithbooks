@@ -35,6 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGRect window = [[UIScreen mainScreen]bounds];
+    if (window.size.height == 480) {
+        detailView.frame = CGRectMake(detailView.frame.origin.x, detailView.frame.origin.y, detailView.frame.size.width, 360);
+    }
+
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
     

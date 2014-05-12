@@ -9,6 +9,31 @@
 
 @implementation BookmarkCell
 
-@synthesize lblTitle = _lblTitle;
+@synthesize lblTitle;
+
+
++ (UITableViewCell *)cellFromNibNamed:(NSString *)nibName ofClass:(Class)cellClass {
+    
+    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:nibName owner:self options:NULL];
+    NSEnumerator *nibEnumerator = [nibContents objectEnumerator];
+    BookmarkCell *xibBasedCell = nil;
+    NSObject* nibItem = nil;
+    
+    while ((nibItem = [nibEnumerator nextObject]) != nil) {
+        if ([nibItem isKindOfClass:cellClass]) {
+            xibBasedCell = (BookmarkCell *)nibItem;
+            break;
+        }
+    }
+    return xibBasedCell;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
 
 @end

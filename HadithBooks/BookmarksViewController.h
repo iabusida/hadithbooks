@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BookmarksViewController : UIViewController<UITableViewDelegate> {
+@interface BookmarksViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>{
 
 }
 @property(nonatomic, retain)  NSMutableArray *bookmarkItems;

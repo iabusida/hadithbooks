@@ -35,7 +35,7 @@
     CGRect window = [[UIScreen mainScreen]bounds];
     if (window.size.height == 568) {
         //        bg_image.frame = CGRectMake(0, 0, 320, 568);
-        //        sourceTable.frame = CGRectMake(35,87,251,296);
+//        sourceTable.frame = CGRectMake(0,70,320,298);
         //        btnContactUs.frame = CGRectMake(106, 490, 108, 20);
     }
     hadithsourcelist = [context GetHadithSources];
@@ -67,6 +67,7 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.lblEnglish.text = hadithSource.EnglishTitle;
     cell.lblArabic.text = hadithSource.ArabicTitle;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -77,7 +78,7 @@
     HadithSource  *hadithSource = [hadithsourcelist objectAtIndex:indexPath.row];
     
     BooksViewController *booksView = [[BooksViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"BooksViewController"] bundle:nil :hadithSource.EnglishTitle :hadithSource.ArabicTitle :hadithSource.SourceId];
-    [self presentViewController:booksView animated:NO completion:nil];
+    [self presentViewController:booksView animated:YES completion:nil];
 }
 
 

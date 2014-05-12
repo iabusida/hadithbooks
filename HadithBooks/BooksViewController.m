@@ -45,9 +45,10 @@
     [super viewDidLoad];
     
     CGRect window = [[UIScreen mainScreen]bounds];
-    if (window.size.height == 568) {
-        bg_image.frame = CGRectMake(0, 0, 320, 568);
-    }
+//    if (window.size.height == 568) {
+//        bg_image.frame = CGRectMake(0, 0, 320, 568);
+//    }
+    
     booksTable.delegate = self;
     lblBookTitleArabic.text = ArabicTitle;
     lblHadithBook.text = EnglishTitle;
@@ -76,6 +77,7 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.lblEnglish.text = book.EnglishTitle;
     cell.lblArabic.text = book.ArabicTitle;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
     

@@ -17,5 +17,6 @@
 +(BOOL) isArabic;
 +(void) UpdateFontSize :(float)fontsize;
 +(void)AddBookmark :(BookmarkItem *)bookmarkItem;
++ (void)DeleteBookMark:(NSUInteger)bookmarkIndex;
 +(NSMutableArray *)fetchBookMarks;
 @end

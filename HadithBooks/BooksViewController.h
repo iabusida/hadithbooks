@@ -16,7 +16,7 @@
 	UILabel *_lblHadithBook;
     NSMutableArray *BookList;
 }
-
+@property (nonatomic, retain) UITabBarController *tabcontroller;
 @property (nonatomic, retain) IBOutlet UIImageView *bg_image;
 
 @property (nonatomic, retain) IBOutlet UITableView *booksTable;

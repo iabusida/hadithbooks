@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BookmarkCell : UITableViewCell {
-	UILabel *_lblTitle;
-}
+@interface BookmarkCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *lblNarrationNumber;
 
 @property (nonatomic, retain) IBOutlet UILabel *lblTitle;
++ (UITableViewCell *)cellFromNibNamed:(NSString *)nibName ofClass:(Class)cellClass;
+
 
 @end

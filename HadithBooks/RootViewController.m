@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     
+    
     self.tabcontroller  =[[UITabBarController alloc]init];
     
     // FirstViewController
@@ -49,7 +50,8 @@
     //    tvc.tabBarItem.image=[UIImage imageNamed:@"img.png"];
     //
     self.tabcontroller.viewControllers=[NSArray arrayWithObjects:hsvc, bmc, nil];
-    
+ 
+   tabcontroller.view.frame = CGRectMake(0, 0, 320, 568);
     [self.view addSubview:self.tabcontroller.view];
     
     // Do any additional setup after loading the view from its nib.
