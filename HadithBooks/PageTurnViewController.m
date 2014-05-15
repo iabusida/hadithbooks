@@ -9,18 +9,11 @@
 #import "NarrationViewController.h"
 @implementation PageTurnViewController
 
-@synthesize btnLanguageId, lblTItle, currentIndex;
+@synthesize btnLanguageId, lblTItle, currentIndex, btnBookmark;
 
 
-
-/*
- Language settings:
- English = 0;
- Arabic = 1;
- 
- */
 - (IBAction)GoBack:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)btnLanguage:(id)sender {
@@ -49,6 +42,7 @@
     bookmarkItem.EnglishTitle = currentBook.EnglishTitle;
 
     [HadithHelper AddBookmark:bookmarkItem];
+    [self checkifBookmarked: currentIndex];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil :(Book *)book
@@ -83,7 +77,7 @@
     
     self.pageController.dataSource = self;
     
-    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height)];
+    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 39, window.size.width, window.size.height)];
     
     NarrationViewController *narrationViewController = [self viewControllerAtIndex:currentIndex];
     
@@ -104,13 +98,17 @@
 }
 
 - (NarrationViewController *)viewControllerAtIndex:(NSUInteger)index {
-    
-    NarrationViewController *narrationViewController = [[NarrationViewController  alloc] initWithNibName:[HadithHelper LoadNibName:@"NarrationViewController"] bundle:nil :[currentBook.Narrations objectAtIndex:index] :currentBook.EnglishTitle :currentBook.ArabicTitle];
-    narrationViewController.NarrationId = index;
-    narrationViewController.TotalNarrations = [currentBook.Narrations count];
-    currentIndex = index;
-    return narrationViewController;
-    
+    @try {
+        NarrationViewController *narrationViewController = [[NarrationViewController  alloc] initWithNibName:[HadithHelper LoadNibName:@"NarrationViewController"] bundle:nil :[currentBook.Narrations objectAtIndex:index] :currentBook.EnglishTitle :currentBook.ArabicTitle];
+        narrationViewController.NarrationId = index;
+        narrationViewController.TotalNarrations = [currentBook.Narrations count];
+        currentIndex = index;
+        [self checkifBookmarked: index];
+        return narrationViewController;
+    }
+    @catch (NSException *exception) {
+        return nil;
+    }
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
@@ -118,9 +116,11 @@
     NSUInteger index = [(NarrationViewController *)viewController NarrationId];
     //
     if (index == 0) {
+        
         Book *newbook  = [[[HadithContext alloc] init] GetBookById:currentBook.SourceId :currentBook.BookId -1];
         if(newbook == nil)
         {
+            [self checkifBookmarked: index];
             return nil;
         }
         else
@@ -130,11 +130,13 @@
         currentBook.Narrations = [[[HadithContext alloc] init] GetNarrationByBookId:currentBook.SourceId :currentBook.BookId];
         
         index = [currentBook.Narrations count] - 1;
+ 
     }
     else
     {
         index--;
     }
+            [self checkifBookmarked: index];
     return [self viewControllerAtIndex:index];
     
     
@@ -150,6 +152,7 @@
         Book *newbook  = [[[HadithContext alloc] init] GetBookById:currentBook.SourceId :currentBook.BookId + 1];
         if(newbook == nil)
         {
+           [self checkifBookmarked: index];
             return nil;
         }
         else{
@@ -158,18 +161,21 @@
         currentBook.Narrations = [[[HadithContext alloc] init] GetNarrationByBookId:currentBook.SourceId :currentBook.BookId];
         index = 0;
     }
+
     return [self viewControllerAtIndex:index ];
 }
-//
-//
-//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-//    // The number of items reflected in the page indicator.
-//    return [currentBook.Narrations count];
-//}
-//
-//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-//    // The selected item reflected in the page indicator.
-//    return 0;
-//}
 
+-(void)checkifBookmarked:(NSUInteger)index
+{
+    if([HadithHelper bookMarkExists:currentBook.SourceId :currentBook.BookId :index])
+    {
+        [btnBookmark setTitle:@"Bookmarked" forState:UIControlStateNormal];
+        btnBookmark.enabled = NO;
+    }
+    else
+    {
+        [btnBookmark setTitle:@"Bookmark" forState:UIControlStateNormal];
+        btnBookmark.enabled = YES;
+    }
+}
 @end

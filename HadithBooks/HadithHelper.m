@@ -80,12 +80,26 @@
     
 }
 
-
 + (NSMutableArray *)fetchBookMarks{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [defaults objectForKey:@"bookmarks"];
     NSMutableArray *bookmarks = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     return bookmarks == nil ? [[NSMutableArray alloc] init] : bookmarks;
+}
+
++ (BOOL)bookMarkExists:(NSUInteger)sourceId :(NSUInteger)bookId :(NSUInteger)NarrationId
+{
+
+    NSMutableArray *bookmarkItems = [self fetchBookMarks];
+    
+    for(BookmarkItem *item in bookmarkItems)
+    {
+        if(item.SourceId == sourceId && item.BookId == bookId && item.NarrationId == NarrationId)
+        {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

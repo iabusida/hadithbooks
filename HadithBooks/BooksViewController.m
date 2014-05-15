@@ -89,7 +89,8 @@
     //
     PageTurnViewController *narrationView = [[PageTurnViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"PageTurnViewController"] bundle:nil :[BookList objectAtIndex:indexPath.row]];
     narrationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:narrationView animated:YES completion:nil];
+    [self.navigationController pushViewController:narrationView animated:YES];
+//    [self presentViewController:narrationView animated:YES completion:nil];
     //    //				PageTurnViewController narrationView = new PageTurnViewController (this.hadithBook, indexPath.Row);
     //    narrationView.ModalTransitionStyle = UIModalTransitionStyle.CrossDissolve;
     //    this.parentController.PresentViewController (narrationView, true, null);
@@ -102,7 +103,8 @@
 
 
 - (IBAction)GoBack:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
+//    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

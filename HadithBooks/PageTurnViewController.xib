@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageTurnViewController">
             <connections>
+                <outlet property="btnBookmark" destination="QBK-Cz-nmA" id="4GJ-Bu-KE6"/>
                 <outlet property="btnLanguageId" destination="IM6-33-Fid" id="RMk-sd-I4s"/>
                 <outlet property="view" destination="6" id="7"/>
             </connections>
@@ -56,7 +57,6 @@
             </subviews>
             <color key="backgroundColor" red="0.97254908080000002" green="0.94901967050000002" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
 </document>

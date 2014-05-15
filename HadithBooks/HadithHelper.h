@@ -19,4 +19,5 @@
 +(void)AddBookmark :(BookmarkItem *)bookmarkItem;
 + (void)DeleteBookMark:(NSUInteger)bookmarkIndex;
 +(NSMutableArray *)fetchBookMarks;
++ (BOOL)bookMarkExists:(NSUInteger)sourceId :(NSUInteger)bookId :(NSUInteger)NarrationId;
 @end

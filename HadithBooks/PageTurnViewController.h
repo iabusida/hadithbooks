@@ -37,6 +37,7 @@
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (strong, nonatomic) UIPageViewController *pageController;
 
+@property (strong, nonatomic) IBOutlet UIButton *btnBookmark;
 - (IBAction)GoBack:(id)sender;
 
 - (IBAction)btnLanguage:(id)sender;

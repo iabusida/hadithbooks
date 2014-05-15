@@ -29,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-       
+    [self.navigationController setNavigationBarHidden:YES];
     HadithContext *context = [[HadithContext alloc] init ];
+    
     CGRect window = [[UIScreen mainScreen]bounds];
     if (window.size.height == 568) {
         //        bg_image.frame = CGRectMake(0, 0, 320, 568);
@@ -76,9 +76,9 @@
 {
     
     HadithSource  *hadithSource = [hadithsourcelist objectAtIndex:indexPath.row];
-    
     BooksViewController *booksView = [[BooksViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"BooksViewController"] bundle:nil :hadithSource.EnglishTitle :hadithSource.ArabicTitle :hadithSource.SourceId];
-    [self presentViewController:booksView animated:YES completion:nil];
+    [self.navigationController pushViewController:booksView animated:YES];
+//    [self presentViewController:booksView animated:YES completion:nil];
 }
 
 

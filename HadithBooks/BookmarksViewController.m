@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.navigationController setNavigationBarHidden:YES];
     CGRect window = [[UIScreen mainScreen]bounds];
     if (window.size.height == 568) {
       
@@ -78,7 +78,7 @@
  
     PageTurnViewController *narrationView = [[PageTurnViewController alloc] initWithNibName:[HadithHelper LoadNibName:@"PageTurnViewController"] bundle:nil :book :bookmark.NarrationId];
     narrationView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:narrationView animated:YES completion:nil];
+    [self.navigationController pushViewController:narrationView animated:YES];
 }
 
 

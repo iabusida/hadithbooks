@@ -29,29 +29,21 @@
 {
     [super viewDidLoad];
     
-    
     self.tabcontroller  =[[UITabBarController alloc]init];
-    
-    // FirstViewController
+
+    HadithSourcesViewController *hsvc=[[HadithSourcesViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"HadithSourcesViewController"] bundle:nil];
+    hsvc.title=@"Hadith Books";
+    // hsvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
+    hsvc.tabBarItem.image=[UIImage imageNamed:@"book.png"];
     BookmarksViewController *bmc =[[BookmarksViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"BookmarksViewController"] bundle:nil];
     bmc.title=@"Bookmarks";
     bmc.tabBarItem.image=[UIImage imageNamed:@"bookmark"];
-    
-    //SecondViewController
-    HadithSourcesViewController *hsvc=[[HadithSourcesViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"HadithSourcesViewController"] bundle:nil];
-    hsvc.title=@"Hadith Books";
-   // hsvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
-    hsvc.tabBarItem.image=[UIImage imageNamed:@"book.png"];
-    //
 
-    //    //ThirdViewController
-    //    Third *tvc=[[Third alloc]initWithNibName:nil bundle:nil];
-    //    tvc.title=@"Third";
-    //    tvc.tabBarItem.image=[UIImage imageNamed:@"img.png"];
-    //
-    self.tabcontroller.viewControllers=[NSArray arrayWithObjects:hsvc, bmc, nil];
- 
-   tabcontroller.view.frame = CGRectMake(0, 0, 320, 568);
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:hsvc];
+    UINavigationController *mbcnavicationController = [[UINavigationController alloc] initWithRootViewController:bmc];
+   
+    self.tabcontroller.viewControllers=[NSArray arrayWithObjects:navVC, mbcnavicationController, nil];
+    tabcontroller.view.frame = CGRectMake(0, 0, 320, 568);
     [self.view addSubview:self.tabcontroller.view];
     
     // Do any additional setup after loading the view from its nib.
