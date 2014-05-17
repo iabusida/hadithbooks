@@ -79,6 +79,7 @@
 		A6676DE61914A5D600FD16F9 /* HadithSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A6676DE41914A5D600FD16F9 /* HadithSource.m */; };
 		A6676DEC1914A5FA00FD16F9 /* Narration.m in Sources */ = {isa = PBXBuildFile; fileRef = A6676DEB1914A5FA00FD16F9 /* Narration.m */; };
 		A6676DEE1914A92E00FD16F9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6676DED1914A92E00FD16F9 /* libsqlite3.0.dylib */; };
+		A6F4B64619271B2200267AD8 /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F4B64519271B2200267AD8 /* RootViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		A6676DEA1914A5FA00FD16F9 /* Narration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Narration.h; sourceTree = "<group>"; };
 		A6676DEB1914A5FA00FD16F9 /* Narration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Narration.m; sourceTree = "<group>"; };
 		A6676DED1914A92E00FD16F9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		A6F4B64519271B2200267AD8 /* RootViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 				A6676DCB1914A4C500FD16F9 /* NarrationViewController.xib */,
 				A6676DCC1914A4C500FD16F9 /* PageTurnViewController.xib */,
 				A64534221916BE6E0026329D /* PageTurnViewController_iPad.xib */,
+				A6F4B64519271B2200267AD8 /* RootViewController_iPad.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				A6676DD71914A4C500FD16F9 /* HadithSourcesViewController_iPad.xib in Resources */,
 				A6676D971914A41F00FD16F9 /* Icon.png in Resources */,
 				A6676D5B1914A38700FD16F9 /* Images.xcassets in Resources */,
+				A6F4B64619271B2200267AD8 /* RootViewController_iPad.xib in Resources */,
 				A6676DD01914A4C500FD16F9 /* BookmarksViewController.xib in Resources */,
 				A6045B13191DE469008A5717 /* house.png in Resources */,
 				A6676D921914A41F00FD16F9 /* Icon-60@2x.png in Resources */,

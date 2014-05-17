@@ -43,7 +43,7 @@
     UINavigationController *mbcnavicationController = [[UINavigationController alloc] initWithRootViewController:bmc];
    
     self.tabcontroller.viewControllers=[NSArray arrayWithObjects:navVC, mbcnavicationController, nil];
-    tabcontroller.view.frame = CGRectMake(0, 0, 320, 568);
+//    tabcontroller.view.frame = CGRectMake(0, 0, 320, 568);
     [self.view addSubview:self.tabcontroller.view];
     
     // Do any additional setup after loading the view from its nib.
