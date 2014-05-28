@@ -81,9 +81,13 @@
     {
     [[self.pageController view] setFrame:CGRectMake(window.origin.x, 39, window.size.width, window.size.height)];
     }
+    else if(window.size.height == 480)
+    {
+    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 50, window.size.width, window.size.height)];
+    }
     else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
-    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height)];
+    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 109, window.size.width, window.size.height)];
     }
     
     NarrationViewController *narrationViewController = [self viewControllerAtIndex:currentIndex];

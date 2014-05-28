@@ -44,11 +44,6 @@
 {
     [super viewDidLoad];
     
-    CGRect window = [[UIScreen mainScreen]bounds];
-//    if (window.size.height == 568) {
-//        bg_image.frame = CGRectMake(0, 0, 320, 568);
-//    }
-    
     booksTable.delegate = self;
     lblBookTitleArabic.text = ArabicTitle;
     lblHadithBook.text = EnglishTitle;

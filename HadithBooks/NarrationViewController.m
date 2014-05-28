@@ -37,7 +37,14 @@
     [super viewDidLoad];
     CGRect window = [[UIScreen mainScreen]bounds];
     if (window.size.height == 480) {
-        detailView.frame = CGRectMake(detailView.frame.origin.x, detailView.frame.origin.y, detailView.frame.size.width, 360);
+        detailView.frame = CGRectMake(detailView.frame.origin.x, detailView.frame.origin.y, detailView.frame.size.width, 340);
+    }
+    else if (window.size.height == 568) {
+        detailView.frame = CGRectMake(detailView.frame.origin.x, detailView.frame.origin.y, detailView.frame.size.width, 440);
+    }
+    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        detailView.frame = CGRectMake(detailView.frame.origin.x, detailView.frame.origin.y - 60, detailView.frame.size.width, detailView.frame.size.height - 40);
     }
 
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
