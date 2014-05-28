@@ -80,6 +80,7 @@
 		A6676DEC1914A5FA00FD16F9 /* Narration.m in Sources */ = {isa = PBXBuildFile; fileRef = A6676DEB1914A5FA00FD16F9 /* Narration.m */; };
 		A6676DEE1914A92E00FD16F9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6676DED1914A92E00FD16F9 /* libsqlite3.0.dylib */; };
 		A6F4B64619271B2200267AD8 /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F4B64519271B2200267AD8 /* RootViewController_iPad.xib */; };
+		F7F5139A193166A6008FBC72 /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7F51399193166A6008FBC72 /* book@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,7 @@
 		A6676DEB1914A5FA00FD16F9 /* Narration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Narration.m; sourceTree = "<group>"; };
 		A6676DED1914A92E00FD16F9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		A6F4B64519271B2200267AD8 /* RootViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPad.xib; sourceTree = "<group>"; };
+		F7F51399193166A6008FBC72 /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		A6676D781914A40500FD16F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7F51399193166A6008FBC72 /* book@2x.png */,
 				A6045B14191F1CE5008A5717 /* bookmark.png */,
 				A6045B15191F1CE5008A5717 /* book.png */,
 				A6045B12191DE469008A5717 /* house.png */,
@@ -528,6 +531,7 @@
 				A6045B13191DE469008A5717 /* house.png in Resources */,
 				A6676D921914A41F00FD16F9 /* Icon-60@2x.png in Resources */,
 				A6676D931914A41F00FD16F9 /* Icon-72.png in Resources */,
+				F7F5139A193166A6008FBC72 /* book@2x.png in Resources */,
 				A6676DCD1914A4C500FD16F9 /* BookmarkCell_iPad.xib in Resources */,
 				A6676D8C1914A41F00FD16F9 /* Default-Portrait@2x.png in Resources */,
 				A6676D8B1914A41F00FD16F9 /* Default-Portrait.png in Resources */,

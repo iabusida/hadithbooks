@@ -33,7 +33,7 @@
 
     HadithSourcesViewController *hsvc=[[HadithSourcesViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"HadithSourcesViewController"] bundle:nil];
     hsvc.title=@"Hadith Books";
-    // hsvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
+//    hsvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
     hsvc.tabBarItem.image=[UIImage imageNamed:@"book.png"];
     BookmarksViewController *bmc =[[BookmarksViewController alloc]initWithNibName:[HadithHelper LoadNibName:@"BookmarksViewController"] bundle:nil];
     bmc.title=@"Bookmarks";
@@ -43,7 +43,11 @@
     UINavigationController *mbcnavicationController = [[UINavigationController alloc] initWithRootViewController:bmc];
    
     self.tabcontroller.viewControllers=[NSArray arrayWithObjects:navVC, mbcnavicationController, nil];
-//    tabcontroller.view.frame = CGRectMake(0, 0, 320, 568);
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+//        tabcontroller.view.frame = CGRectMake(0, 0, 1024, 968);
+    }
     [self.view addSubview:self.tabcontroller.view];
     
     // Do any additional setup after loading the view from its nib.

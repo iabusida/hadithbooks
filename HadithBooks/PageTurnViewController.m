@@ -76,8 +76,15 @@
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageController.dataSource = self;
-    
+  
+    if(window.size.height == 568)
+    {
     [[self.pageController view] setFrame:CGRectMake(window.origin.x, 39, window.size.width, window.size.height)];
+    }
+    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+    [[self.pageController view] setFrame:CGRectMake(window.origin.x, 59, window.size.width, window.size.height)];
+    }
     
     NarrationViewController *narrationViewController = [self viewControllerAtIndex:currentIndex];
     
