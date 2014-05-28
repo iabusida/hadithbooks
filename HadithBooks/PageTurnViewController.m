@@ -11,6 +11,7 @@
 
 @synthesize btnLanguageId, lblTItle, currentIndex, btnBookmark;
 
+bool isinit = false;
 
 - (IBAction)GoBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -37,7 +38,7 @@
 
     bookmarkItem.SourceId = currentBook.SourceId;
     bookmarkItem.BookId = currentBook.BookId;
-    bookmarkItem.NarrationId = currentIndex;
+    bookmarkItem.NarrationId = currentIndex - 1;
     bookmarkItem.ArabicTitle = currentBook.ArabicTitle;
     bookmarkItem.EnglishTitle = currentBook.EnglishTitle;
 
@@ -126,7 +127,7 @@
     
     NSUInteger index = [(NarrationViewController *)viewController NarrationId];
     //
-    if (index == 0) {
+    if (index == 0 && isinit && currentIndex == 0) {
         
         Book *newbook  = [[[HadithContext alloc] init] GetBookById:currentBook.SourceId :currentBook.BookId -1];
         if(newbook == nil)
@@ -147,7 +148,8 @@
     {
         index--;
     }
-            [self checkifBookmarked: index];
+    [self checkifBookmarked: index];
+    isinit = true;
     return [self viewControllerAtIndex:index];
     
     
